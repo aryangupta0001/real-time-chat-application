@@ -73,7 +73,7 @@ body{
     /* border: 2px solid red; */
 }
 
-.send>input{
+.send>form>textarea{
     width: 90%;
     height: 100%;
 
@@ -92,7 +92,7 @@ body{
     
 }
 
-.send>button{
+.send>form>button{
     display: block;
 
     float: right;
@@ -107,11 +107,11 @@ body{
     outline: none;
 }
 
-.send>button:active{
+.send>form>button:active{
     border: 2px solid black;
 }
 
-.send>button>img{
+.send>form>button>img{
     /* height: 100%; */
     width: 100%;
 
