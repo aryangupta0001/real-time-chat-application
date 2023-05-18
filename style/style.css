@@ -1,0 +1,121 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(rgb(255, 255, 255), rgb(255, 180, 249));
+    height: 100vh;
+}
+
+.logo{
+    background-color: rgb(180, 182, 255);
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    height: 10vh;
+    width: 50vw;
+
+    /* border: 2px solid black; */
+}
+
+.logo>img{
+    display: block;
+    height: 100%;
+    margin: auto;
+}
+
+.container{
+    background-color: antiquewhite;
+    margin: auto;
+    padding: 15px;
+    width: 50vw;
+    height: 75vh;
+    border: none;
+    border-radius: 15px;
+}
+
+.message{
+    margin: 5px 0px;
+    /* background-color: aqua; */
+
+    width: fit-content;
+    height: fit-content;
+
+    padding: 5px;
+}
+
+.left{
+    float: left;
+    clear: both;
+    border-radius: 0px 10px 10px 0px;
+
+    background-color: rgb(94, 194, 169);
+}
+
+.right{
+    float: right;
+    clear: both;
+    border-radius:  10px 0px 0px 10px;
+
+    background-color: rgb(238, 164, 164);
+}
+
+.send{
+    height: 6vh;
+    width: 40vw;
+
+    margin: auto;
+    margin-top: 5px;
+
+    /* border: 2px solid red; */
+}
+
+.send>input{
+    width: 90%;
+    height: 100%;
+
+    margin: auto;
+    padding: 5px;
+
+    float: left;
+
+    background: none;
+    border: none;
+    outline: none;
+
+    border: none;
+
+    font-size: 1.5rem;
+    
+}
+
+.send>button{
+    display: block;
+
+    float: right;
+
+    height: fit-content;
+    width: 7%;
+
+    margin: auto;
+
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.send>button:active{
+    border: 2px solid black;
+}
+
+.send>button>img{
+    /* height: 100%; */
+    width: 100%;
+
+    display: block;
+
+    border: none;
+}
