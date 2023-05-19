@@ -35,6 +35,8 @@ body{
     height: 75vh;
     border: none;
     border-radius: 15px;
+
+    overflow-y: auto;
 }
 
 .message{
