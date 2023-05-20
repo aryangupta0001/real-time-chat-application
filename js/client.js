@@ -5,4 +5,5 @@ const message = document.getElementById("msg");
 const messagecontainer = document.querySelector("container");
 
 const user_name = prompt("What's your name ?");
+console.log(user_name);
 socket.emit("new-user-joined", user_name);

@@ -1,4 +1,19 @@
-const io = require("socket.io")(8000);
+const http = require('http');
+const socketIO = require("socket.io");
+
+// Create the HTTP server
+const server = http.createServer();
+
+// Create the Socket.IO instance and pass the server as an argument
+const io = socketIO(server, {
+    cors: {
+        origin: '*',
+        methods: ['GET', 'POST'],
+        allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
+        credentials: true
+    }
+});
+
 
 const users = {};
 
@@ -13,3 +28,9 @@ io.on("connection", socket =>{
         socket.broadcast.emit("receive", {message : message, name : users[socket.id]})
     });
 });
+
+
+
+
+
+server.listen(8000);
