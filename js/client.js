@@ -20,11 +20,17 @@ const append = (message, position) => {
 socket.emit("new-user-joined", user_name);
 append("You joined the chat", "center");
 
+
 // receive broadcast emit from server when new user joins
 socket.on("user-joined", user_name=> {
     append(`${user_name} joined the chat`, "center");
 })
 
+
+// receive notification when a user lefts
+socket.on("user-left", data => {
+    append(`${data.name} left the chat`);
+})
 
 // event listener to listen Submit button of new message
 form.addEventListener("submit", (e) => {
