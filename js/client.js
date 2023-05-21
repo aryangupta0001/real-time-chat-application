@@ -4,20 +4,29 @@ const form = document.getElementById("send_message");
 const new_message = document.getElementById("msg");
 const messagecontainer = document.querySelector(".container");
 
-const user_name = prompt("What's your name ?");
-socket.emit("new-user-joined", user_name);
 
-const append_user = (message, position) => {
+// Ennter your name:-
+const user_name = prompt("What's your name ?");
+
+// function to append to the message-container
+const append = (message, position) => {
     const message_element = document.createElement("div");
     message_element.innerText = message;
     message_element.classList.add("message", position);
     messagecontainer.append(message_element);
 }
 
+// Emit to other users, that you joined
+socket.emit("new-user-joined", user_name);
+append("You joined the chat", "center");
+
+// receive broadcast emit from server when new user joins
 socket.on("user-joined", user_name=> {
-    append_user(`${user_name} joined the chat`, "center");
+    append(`${user_name} joined the chat`, "center");
 })
 
+
+// event listener to listen Submit button of new message
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const message = new_message.value;
@@ -26,6 +35,7 @@ form.addEventListener("submit", (e) => {
     new_message.value = "";
 })
 
+// receives the broadcast emit of new message.
 socket.on("receive", data => {
-    append(`${data.names}`)
+    append(`${data.name} : ${data.message}`, "left");
 })

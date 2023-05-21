@@ -40,7 +40,7 @@ body{
 }
 
 .message{
-    margin: 5px 0px;
+    margin: 5px auto;
     /* background-color: aqua; */
 
     width: fit-content;
