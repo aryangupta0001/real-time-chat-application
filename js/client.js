@@ -3,6 +3,7 @@ const socket = io("http://localhost:8000");
 const form = document.getElementById("send_message");
 const new_message = document.getElementById("msg");
 const messagecontainer = document.querySelector(".container");
+const audio = new Audio("../media/new_msg.mp3");
 
 
 // Ennter your name:-
@@ -44,4 +45,7 @@ form.addEventListener("submit", (e) => {
 // receives the broadcast emit of new message.
 socket.on("receive", data => {
     append(`${data.name} : ${data.message}`, "left");
+    // new Audio("../media/new_msg.mp3").play();
+    // Audio("../media/new_msg.mp3").play();
+    audio.play();
 })
