@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REAL TIME CHAT APPLICATION</title>
 
-    <script src="http://localhost:8000/socket.io/socket.io.js"></script>
-    <script src="./js/client.js"></script>
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script defer src="./js/client.js"></script>
 
     <link rel="stylesheet" href="./style/style.css">
 </head>
@@ -16,13 +16,17 @@
         <img src="./images/logo.png" alt="" id="logo">
     </div>
 
-    <div class="container">
+    <div class="container" id="message_container">
         <div class="message left">
             Ranbeer : Hey How are you ?
         </div>
 
         <div class="message right">
             Aryan : I'm fine, what about you ?
+        </div>
+
+        <div class="center">
+            <b>Somebody</b> joined the chat.
         </div>
     </div>
 
