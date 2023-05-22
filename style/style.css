@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
 *{
     margin: 0px;
     padding: 0px;
@@ -10,21 +12,29 @@ body{
 }
 
 .logo{
-    background-color: rgb(180, 182, 255);
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-    height: 10vh;
+    box-sizing: border-box;
+    height: ;
     width: 50vw;
+    padding: 0px;
+
+    background-color: rgb(180, 182, 255);
+    margin: 10px auto;
 
     /* border: 2px solid black; */
 }
 
 .logo>img{
     display: block;
-    height: 100%;
-    margin: auto;
+    height: 9vh;
+    margin: 100px auto;
+}
+
+.logo>div{
+    margin: 10px auto;
+    text-align: center;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
 }
 
 .container{
@@ -32,7 +42,7 @@ body{
     margin: auto;
     padding: 15px;
     width: 50vw;
-    height: 75vh;
+    height: 60vh;
     border: none;
     border-radius: 15px;
 
