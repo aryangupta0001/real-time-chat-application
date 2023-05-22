@@ -13,7 +13,7 @@ body{
 
 .logo{
     box-sizing: border-box;
-    height: ;
+    height: min-content;
     width: 50vw;
     padding: 0px;
 
