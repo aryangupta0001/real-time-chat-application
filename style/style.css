@@ -20,13 +20,16 @@ body{
     background-color: rgb(180, 182, 255);
     margin: 10px auto;
 
+
+    padding-top: 10px;
+
     /* border: 2px solid black; */
 }
 
 .logo>img{
     display: block;
     height: 9vh;
-    margin: 100px auto;
+    margin: 0px auto;
 }
 
 .logo>div{
