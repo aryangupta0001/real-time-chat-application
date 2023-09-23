@@ -34,8 +34,8 @@ socket.on("user-left", data => {
 })
 
 // event listener to listen Submit button of new message
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
+form.addEventListener("submit", (e) => {    
+    e.preventDefault(); 
     const message = new_message.value;
     append(`You : ${message}`, "right");
     socket.emit("send", message);

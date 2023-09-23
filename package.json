@@ -5,7 +5,7 @@
     "socket.io": "^4.6.1"
   },
   "scripts": {
-    "start": "concurrently \"cd node server && npx nodemon app.js\" \"live-server\"",
+    "start": "concurrently \"cd node server && npx nodemon app.js\" \"live-server --port=5500\"",
     "start-frontend": "live-server"
   }
 }

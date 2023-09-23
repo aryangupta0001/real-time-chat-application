@@ -17,7 +17,7 @@ const io = socketIO(server, {
 
 const users = {};
 
-io.on("connection", socket =>{
+io.on("connection", socket => {
     socket.on("new-user-joined", user_name => {
         // console.log(user_name);
         users[socket.id] = user_name;
@@ -25,14 +25,16 @@ io.on("connection", socket =>{
     });
 
     socket.on("send", message => {
-        socket.broadcast.emit("receive", {message : message, name : users[socket.id]})
+        socket.broadcast.emit("receive", { message: message, name: users[socket.id] })
     });
 
-    socket.on("disconnect", message => {
-        socket.broadcast.emit("user-left", {name : users[socket.id]});
+    socket.on("disconnect", () => {
+        socket.broadcast.emit("user-left", { name: users[socket.id] });
         delete users[socket.id];
     })
 });
 
 
-server.listen(8000);
+server.listen(8000, '0.0.0.0', () => {
+    console.log('Server is running on port 8000');
+});
