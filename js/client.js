@@ -1,9 +1,12 @@
-const socket = io("http://localhost:8000");
+// const socket = io("http://localhost:8000");
+const socket = io("https://chatarpatar.netlify.app/");
+
 
 const form = document.getElementById("send_message");
 const new_message = document.getElementById("msg");
 const messagecontainer = document.querySelector(".container");
-const audio = new Audio("../media/new_msg.mp3");
+const new_msg_audio = new Audio("../media/new_msg.mp3");
+const new_user_audio = new Audio("../media/new_user.mp3");
 
 
 // Ennter your name:-
@@ -23,8 +26,10 @@ append("You joined the chat", "center");
 
 
 // receive broadcast emit from server when new user joins
-socket.on("user-joined", user_name=> {
+socket.on("user-joined", user_name => {
     append(`${user_name} joined the chat`, "center");
+    new_user_audio.play();
+
 })
 
 
@@ -34,8 +39,8 @@ socket.on("user-left", data => {
 })
 
 // event listener to listen Submit button of new message
-form.addEventListener("submit", (e) => {    
-    e.preventDefault(); 
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
     const message = new_message.value;
     append(`You : ${message}`, "right");
     socket.emit("send", message);
@@ -47,5 +52,5 @@ socket.on("receive", data => {
     append(`${data.name} : ${data.message}`, "left");
     // new Audio("../media/new_msg.mp3").play();
     // Audio("../media/new_msg.mp3").play();
-    audio.play();
+    new_msg_audio.play();
 })
