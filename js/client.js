@@ -1,4 +1,5 @@
-const socket = io("https://chatarpatar.netlify.app");
+// const socket = io("https://chatarpatar.netlify.app");
+const socket = io("https://real-time-chat-application-nu.vercel.app");
 
 
 const form = document.getElementById("send_message");
