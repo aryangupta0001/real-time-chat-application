@@ -35,6 +35,6 @@ io.on("connection", socket => {
 });
 
 
-server.listen(843, '0.0.0.0', () => {
+server.listen(443, '0.0.0.0', () => {
     console.log('Server is running on port 843');
 });
